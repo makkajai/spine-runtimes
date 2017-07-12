@@ -131,6 +131,8 @@ static const int quadTriangles[6] = {0, 1, 2, 2, 3, 0};
 }
 
 - (void) dealloc {
+    [_drawNode release];
+    _drawNode = nil;
 	if (_ownsSkeletonData) spSkeletonData_dispose(_skeleton->data);
 	if (_atlas) spAtlas_dispose(_atlas);
 	spSkeleton_dispose(_skeleton);
